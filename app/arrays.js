@@ -20,6 +20,7 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+return Math.max(...arr)
 }
 
 
@@ -32,6 +33,11 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let newArray = []
+    for(let x = 0; x <= arr.length; x++){
+    max = arr[x]*arr.length
+    newArray.push(max)}
+    return newArray
 }
 
 
@@ -68,8 +74,15 @@ let flights = [{
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
 
-}
+console.log(destination.toUpperCase())
 
+const found = flights.find(f => f.to == destination.toUpperCase())
+if(firstClass === false){
+    return found.prices.standard
+}
+return found.prices.firstClass
+
+}
 
 // ------------------------------------------
 
@@ -88,7 +101,11 @@ let staff = [{ id: 1, name: 'Jon' }, { id: 2, name: 'Yuli' }, { id: 21, name: 'P
 { id: 881, name: 'Paul' }, { id: 0, name: 'Jon' }, { id: 999, name: 'Timma' }]
 
 function findById(id) {
+    let StaffId = staff.find(person => person.id == id)
+    if(!StaffId)
+    return {error:"No user with that id."}
 
+    return StaffId
 }
 
 
@@ -115,4 +132,10 @@ let theBand = {
 }
 
 function bandMemberDetails(name) {
+    let member = theBand.members.find(b => b.name.includes(name))
+    return member.name + ' ' + "is in the band and plays the" + ' ' + member.instrument
+    
+    
+   
+
 }
