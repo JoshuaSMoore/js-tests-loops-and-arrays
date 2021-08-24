@@ -134,7 +134,7 @@ let theBand = {
 function bandMemberDetails(name) {
     let member = theBand.members.find(b => b.name.includes(name))
     return member.name + ' ' + "is in the band and plays the" + ' ' + member.instrument
-    
+    ``
     
    
 
